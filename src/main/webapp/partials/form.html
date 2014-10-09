@@ -1,0 +1,51 @@
+<div class="row" ng-controller="FormCtrl">
+    <div class="center-block">
+        <form ng-submit="submitForm()">
+            <div class="row">
+                <div class="col-lg-6 avatar-with-name">
+                    <div class="avatar">
+                        <img ng-src="{{imageSource(form.fromUser)}}">
+                    </div>
+                    <div class="avatar-name">
+                        <input class="form-control typeahead typeahead-input" ng-model="form.fromName" type="text" disabled />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 avatar-with-name">
+                    <div class="avatar">
+                        <img ng-src="{{imageSource(form.toUser)}}">
+                    </div>
+                    <div class="avatar-name">
+                        <typeahead items="people" term="term" search="searchPeople(term)" select="selectPerson(item)">
+                            <div class="tt-dropdown-menu" ng-show="showResults()" ng-cloak>
+                                <ul>
+                                    <li typeahead-item="person" ng-repeat="person in people" class="tt-suggestion">
+                                        <img ng-src="{{imageSource(person.username)}}">
+                                        <div class="info">
+                                            <p class="name">{{person.name}}</p>
+                                            <p class="username">{{person.username}}</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </typeahead>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <textarea class="form-control" id="description" ng-model="form.description" placeholder="Description"></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Pat">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

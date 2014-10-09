@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <mvc:annotation-driven />
+
+    <mvc:resources mapping="/scripts/**" location="/scripts/" cache-period="300" />
+    <mvc:resources mapping="/styles/**" location="/styles/" cache-period="300" />
+    <mvc:resources mapping="/partials/**" location="/partials/" cache-period="300" />
+    <mvc:resources mapping="/assets/**" location="/assets/" cache-period="300" />
+
+    <bean id="jackson-jaxrs" class="org.codehaus.jackson.map.ObjectMapper"></bean>
+
+    <!-- init -->
+    <context:component-scan base-package="com.nortal" />
+
+</beans>

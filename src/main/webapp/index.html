@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="scripts/angular/angular.min.js"></script>
+    <script src="scripts/bootstrap/bootstrap.js"></script>
+    <script src="scripts/jquery/jquery-2.1.0.min.js"></script>
+    <script src="scripts/angular/angular-route.js"></script>
+    <script src="scripts/angular/angular-resource.js"></script>
+    <script src="scripts/angular/angular-cookies.js"></script>
+    <script src="scripts/rx/rx.js"></script>
+    <script src="scripts/rx/rx.time.min.js"></script>
+    <script src="scripts/rx/rx.coincidence.min.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/service.js"></script>
+    <script src="scripts/directive.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <title>Patty</title>
+</head>
+
+<body ng-controller="RootCtrl">
+
+<div id="main">
+    <div class="wrap">
+        <div class="container clearfix">
+            <div id="subnav" class="clear" ng-show="isAuthenticated">
+                <a href="" ng-click="logout()">Log out</a>
+            </div>
+
+            <div ng-view></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
